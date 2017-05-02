@@ -17,29 +17,32 @@ import javax.persistence.Persistence;
  */
 public class DBFiller {
 
+    private static EntityManager em;
+    private static EntityManagerFactory emf;
+    private static EntityTransaction transac;
+
     public static void main(String[] args) {
-        
-        
-        
-        
-        
 
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("gcfaPU");
+        persistObject(new File());
+        
+    }
 
-        EntityManager em = emf.createEntityManager();
+    private static void persistObject(Object o) {
+        initTransaction();
+        em.persist(o);
+        closeTransaction();
+    }
 
-        File file = new File();
-
-        EntityTransaction transac = em.getTransaction();
-
+    private static void initTransaction() {
+        emf = Persistence.createEntityManagerFactory("gcfaPU");
+        em = emf.createEntityManager();
+        transac = em.getTransaction();
         transac.begin();
+    }
 
-        em.persist(file);
-
+    private static void closeTransaction() {
         transac.commit();
-
         em.close();
-
     }
 
 }
