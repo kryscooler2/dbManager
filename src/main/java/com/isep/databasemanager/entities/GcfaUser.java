@@ -1,6 +1,7 @@
 package com.isep.databasemanager.entities;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,12 +20,12 @@ public class GcfaUser implements Serializable {
     private String email;
     private String login;
     
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     private UserTime startDate;
     
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     private UserTime endDate;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     private UserRelation userRelation;
 
     public GcfaUser() {

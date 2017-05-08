@@ -2,6 +2,7 @@ package com.isep.databasemanager.entities;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,7 +18,7 @@ public class UserTime implements Serializable {
     
     private long millis;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.PERSIST)
     private List<GcfaUser> users;
     
     public long getId() {

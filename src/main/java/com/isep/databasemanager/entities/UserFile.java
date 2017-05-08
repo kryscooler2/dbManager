@@ -1,5 +1,6 @@
 package com.isep.databasemanager.entities;
 
+import java.io.File;
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,13 +8,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class File implements Serializable {
+public class UserFile implements Serializable {
         
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     
-    private String fileContent = "myData";
+    private File file = new File("Coucou.png");
 
     public long getId() {
         return id;
@@ -23,12 +24,12 @@ public class File implements Serializable {
         this.id = id;
     }
 
-    public String getFileContent() {
-        return fileContent;
+    public File getFile() {
+        return file;
     }
 
-    public void setFileContent(String fileContent) {
-        this.fileContent = fileContent;
+    public void setFile(File file) {
+        this.file = file;
     }
     
 }

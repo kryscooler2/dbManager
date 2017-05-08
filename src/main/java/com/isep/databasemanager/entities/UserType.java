@@ -2,6 +2,7 @@ package com.isep.databasemanager.entities;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,7 +18,7 @@ public class UserType implements Serializable {
     
     private String name;
     
-    @OneToMany
+    @OneToMany(cascade = CascadeType.PERSIST)
     private List<GcfaUser> users;
 
     public UserType() {
