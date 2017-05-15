@@ -7,6 +7,7 @@
     <class>com.isep.databasemanager.entities.UserTime</class>
     <class>com.isep.databasemanager.entities.UserType</class>
     <class>com.isep.databasemanager.entities.UserFile</class>
+    <class>com.isep.databasemanager.entities.FileType</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/gcfaDB"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

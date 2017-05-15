@@ -21,6 +21,10 @@ public class UserTime implements Serializable {
     @OneToMany(cascade = CascadeType.PERSIST)
     private List<GcfaUser> users;
     
+    public UserTime() {
+        this.millis = System.currentTimeMillis();
+    }
+    
     public long getId() {
         return id;
     }

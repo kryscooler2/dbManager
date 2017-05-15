@@ -21,6 +21,14 @@ public class UserRelation implements Serializable {
     @OneToMany(mappedBy = "userRelation", cascade = CascadeType.PERSIST)
     private List<GcfaUser> students;
 
+    public UserRelation() {
+    }
+
+    public UserRelation(String tutorName, List<GcfaUser> students) {
+        this.tutorName = tutorName;
+        this.students = students;
+    }
+
     public long getId() {
         return id;
     }
