@@ -6,6 +6,7 @@
 package com.isep.databasemanager.dao;
 
 import com.isep.databasemanager.entities.GcfaUser;
+import com.isep.databasemanager.entities.UserRelation;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -28,10 +29,17 @@ public class UserDAO {
         return user;
         
     }
-//
-//    public String get() {
-//
-//    }
+
+    public List<GcfaUser> getUserRelationByTutorId(long tutorId) {
+        
+        EntityManager em = TransactionManager.initTransaction();
+        UserRelation relation = em.find(UserRelation.class, tutorId);
+        TransactionManager.closeTransaction();
+        List<GcfaUser> students = relation.getStudents();
+        
+        return students;
+        
+    }
 //
 //    public String get() {
 //
