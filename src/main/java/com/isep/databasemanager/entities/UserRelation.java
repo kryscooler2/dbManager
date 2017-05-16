@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -16,7 +17,8 @@ public class UserRelation implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     
-    private String tutorName;
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    private GcfaUser tutor;
     
     @OneToMany(mappedBy = "userRelation", cascade = CascadeType.PERSIST)
     private List<GcfaUser> students;
@@ -24,8 +26,8 @@ public class UserRelation implements Serializable {
     public UserRelation() {
     }
 
-    public UserRelation(String tutorName, List<GcfaUser> students) {
-        this.tutorName = tutorName;
+    public UserRelation(GcfaUser tutor, List<GcfaUser> students) {
+        this.tutor = tutor;
         this.students = students;
     }
 
@@ -37,12 +39,12 @@ public class UserRelation implements Serializable {
         this.id = id;
     }
 
-    public String getTutorName() {
-        return tutorName;
+    public GcfaUser getTutor() {
+        return tutor;
     }
 
-    public void setTutorName(String tutorName) {
-        this.tutorName = tutorName;
+    public void setTutor(GcfaUser tutor) {
+        this.tutor = tutor;
     }
 
     public List<GcfaUser> getStudents() {

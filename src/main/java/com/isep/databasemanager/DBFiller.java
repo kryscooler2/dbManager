@@ -49,7 +49,7 @@ public class DBFiller {
         GcfaUser student4 = new GcfaUser(9202, "Hugues", "theo@isep.fr", "thugues", userTime1, userTime3, student);
         GcfaUser admin1 = new GcfaUser(4, "Admin", "admin@isep.fr", "aadmin", userTime1, userTime3, admin);
         GcfaUser tutor1 = new GcfaUser(5, "Tutor1", "tutor1@isep.fr", "ttutor1", userTime1, userTime3, tutor);
-        GcfaUser tutor2 = new GcfaUser(6, "Tutor1", "tutor1@isep.fr", "ttutor1", userTime1, userTime3, tutor);
+        GcfaUser tutor2 = new GcfaUser(6, "Tutor2", "tutor2@isep.fr", "ttutor2", userTime1, userTime3, tutor);
         
         UserFile userFile1 = new UserFile("documentation.txt", 1494854000000l, admin1, true, documentation);
         UserFile userFile2 = new UserFile("guideDeLApprentissage.txt", 1494853890000l, admin1, true, documentation);
@@ -66,8 +66,8 @@ public class DBFiller {
         group1.add(student3);
         group1.add(student4);
         
-        UserRelation relation1 = new UserRelation(tutor1.getName(), group1);
-        UserRelation relation2 = new UserRelation(tutor2.getName(), group2);
+        UserRelation relation1 = new UserRelation(tutor1, group1);
+        UserRelation relation2 = new UserRelation(tutor2, group2);
         
         
         em = TransactionManager.initTransaction();
