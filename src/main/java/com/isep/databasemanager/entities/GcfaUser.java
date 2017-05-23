@@ -17,7 +17,8 @@ public class GcfaUser implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     
-    private String name;
+    private String firstName;
+    private String lastName;
     private String email;
     private String login;
     
@@ -36,9 +37,10 @@ public class GcfaUser implements Serializable {
     public GcfaUser() {
     }
 
-    public GcfaUser(long id, String name, String email, String login, UserTime startDate, UserTime endDate, UserType type) {
+    public GcfaUser(long id, String firstName, String lastName, String email, String login, UserTime startDate, UserTime endDate, UserType type) {
         this.id = id;
-        this.name = name;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
         this.login = login;
         this.startDate = startDate;
@@ -50,10 +52,11 @@ public class GcfaUser implements Serializable {
         this.id = (long) o[0];
         this.email = (String) o[1];
         this.login = (String) o[2];
-        this.name = (String) o[3];
-        this.endDate = (UserTime) o[5];//      TODO give him dates
-        this.startDate = (UserTime) o[6];
-        this.userFiles = (List<UserFile>) o[6];//    TODO give him files
+        this.firstName = (String) o[3];
+        this.lastName = (String) o[4];
+        this.endDate = (UserTime) o[6];//      TODO give him dates
+        this.startDate = (UserTime) o[7];
+        this.userFiles = (List<UserFile>) o[7];//    TODO give him files
     }
 
     public UserType getType() {
@@ -64,12 +67,20 @@ public class GcfaUser implements Serializable {
         this.type = type;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {

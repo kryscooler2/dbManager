@@ -31,10 +31,10 @@ public class Tester {
     public static void main(String[] args) throws IOException, NoSuchAlgorithmException {
 
         UserDAO userDao = new UserDAO();
-        List<GcfaUser> l = userDao.getUsersByKeyWord("zer");
+        List<GcfaUser> l = userDao.getUsersByKeyWord("tt");
         
         for (GcfaUser u:l) {
-            System.out.println(u.getName());
+            System.out.println(u.getFirstName());
         }
 
     }
@@ -70,7 +70,7 @@ public class Tester {
 
     public static String createAndRetrieveUserEmail(String name) {
 
-        persistObject(new GcfaUser(1l, name, "toto@toto.fr", "ttoto", new UserTime(), new UserTime(), null));
+        persistObject(new GcfaUser(1l, name, "firstname", "toto@toto.fr", "ttoto", new UserTime(), new UserTime(), null));
 
         return getUserEmail(name);
 

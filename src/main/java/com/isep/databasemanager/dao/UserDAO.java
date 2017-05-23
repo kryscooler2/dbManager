@@ -58,8 +58,10 @@ public class UserDAO {
 
         EntityManager em = TransactionManager.initTransaction();
 
-        List l = em.createNativeQuery("SELECT u.id FROM GcfaUser u WHERE u.name LIKE ?")
+        List l = em.createNativeQuery("SELECT u.id FROM GcfaUser u WHERE u.firstName LIKE ? OR u.lastName LIKE ? OR u.login LIKE ?")
                 .setParameter(1, "%"+keyWord+"%")
+                .setParameter(2, "%"+keyWord+"%")
+                .setParameter(3, "%"+keyWord+"%")
                 .getResultList();
         
         List<GcfaUser> ans = new ArrayList<>();

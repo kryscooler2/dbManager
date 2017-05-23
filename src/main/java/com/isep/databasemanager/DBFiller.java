@@ -43,13 +43,13 @@ public class DBFiller {
         UserTime userTime2 = new UserTime();
         UserTime userTime3 = new UserTime();
         
-        GcfaUser student1 = new GcfaUser(8095, "Arrivet", "theophile@isep.fr", "tarrivet", userTime1, userTime3, student);
-        GcfaUser student2 = new GcfaUser(9203, "Gourou", "jerem@isep.fr", "jgourou", userTime2, userTime3, student);
-        GcfaUser student3 = new GcfaUser(9150, "Zingu", "julachris@isep.fr", "jzingu", userTime1, userTime3, student);
-        GcfaUser student4 = new GcfaUser(9202, "Hugues", "theo@isep.fr", "thugues", userTime1, userTime3, student);
-        GcfaUser admin1 = new GcfaUser(4, "Admin", "admin@isep.fr", "aadmin", userTime1, userTime3, admin);
-        GcfaUser tutor1 = new GcfaUser(5, "Tutor1", "tutor1@isep.fr", "ttutor1", userTime1, userTime3, tutor);
-        GcfaUser tutor2 = new GcfaUser(6, "Tutor2", "tutor2@isep.fr", "ttutor2", userTime1, userTime3, tutor);
+        GcfaUser student1 = new GcfaUser(8095, "Theophile", "Arrivet", "theophile@isep.fr", "tarrivet", userTime1, userTime3, student);
+        GcfaUser student2 = new GcfaUser(9203, "Jeremy", "Gourou",  "jerem@isep.fr", "jgourou", userTime2, userTime3, student);
+        GcfaUser student3 = new GcfaUser(9150, "Julachris", "Zingu", "julachris@isep.fr", "jzingu", userTime1, userTime3, student);
+        GcfaUser student4 = new GcfaUser(9202, "Theo", "Hugues", "theo@isep.fr", "thugues", userTime1, userTime3, student);
+        GcfaUser admin1 = new GcfaUser(4, "adminFirstName", "AdminLastName", "admin@isep.fr", "aadmin", userTime1, userTime3, admin);
+        GcfaUser tutor1 = new GcfaUser(5, "tutor1FirstName", "Tutor1", "tutor1@isep.fr", "ttutor1", userTime1, userTime3, tutor);
+        GcfaUser tutor2 = new GcfaUser(6, "tutor2FirstName", "Tutor2", "tutor2@isep.fr", "ttutor2", userTime1, userTime3, tutor);
         
         UserFile userFile1 = new UserFile("documentation.txt", 1494854000000l, admin1, true, documentation);
         UserFile userFile2 = new UserFile("guideDeLApprentissage.txt", 1494853890000l, admin1, true, documentation);
