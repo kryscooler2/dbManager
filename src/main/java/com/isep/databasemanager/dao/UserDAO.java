@@ -22,6 +22,8 @@ public class UserDAO {
 
     public GcfaUser getUserById(long id) {
         
+        String path = System.getProperty("user.dir");
+        
         EntityManager em = TransactionManager.initTransaction();
         GcfaUser user = em.find(GcfaUser.class, id);
         TransactionManager.closeTransaction();
