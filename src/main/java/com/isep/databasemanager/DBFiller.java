@@ -69,6 +69,11 @@ public class DBFiller {
         UserRelation relation1 = new UserRelation(tutor1, group1);
         UserRelation relation2 = new UserRelation(tutor2, group2);
         
+        student1.setUserRelation(relation1);
+        student2.setUserRelation(relation1);
+        student3.setUserRelation(relation2);
+        student4.setUserRelation(relation2);
+        
         
         em = TransactionManager.initTransaction();
         em.persist(userFile1);

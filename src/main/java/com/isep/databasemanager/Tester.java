@@ -13,6 +13,7 @@ import com.isep.databasemanager.entities.UserFile;
 import com.isep.databasemanager.entities.UserTime;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
+import java.util.Arrays;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -33,7 +34,9 @@ public class Tester {
     public static void main(String[] args) throws IOException, NoSuchAlgorithmException {
 
 //        UserDAO userDao = new UserDAO();
-//        List<GcfaUser> l = userDao.getUsersByKeyWord("Theophile");
+//        List<GcfaUser> l = userDao.getUsersByKeyWord("r");
+//        
+//        System.out.println(Arrays.toString(l.toArray()));
 //        
 //        for (GcfaUser u:l) {
 //            System.out.println(u.getFirstName());
@@ -43,6 +46,7 @@ public class Tester {
         //System.out.println(userDao.getUserById(8095).getFirstName());
             
 
+        //userDao.getStudentListByTutor(new GcfaUser(5, null, null, null, null, null, null, null));
 
 
         FileDAO fDao = new FileDAO();

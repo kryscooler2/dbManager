@@ -10,6 +10,7 @@ import com.isep.databasemanager.entities.GcfaUser;
 import com.isep.databasemanager.entities.UserFile;
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import javax.persistence.EntityManager;
 
@@ -23,21 +24,12 @@ public class FileDAO {
 
         EntityManager em = TransactionManager.initTransaction();
 
-        List typeIdList = em.createNativeQuery("SELECT t.id FROM FileType t WHERE t.name LIKE ?")
-                .setParameter(1, "%" + keyWord + "%")
+        List<UserFile> typeList = em.createQuery("SELECT f FROM UserFile f WHERE f.type.name LIKE :kw", UserFile.class)
+                .setParameter("kw", "%" + keyWord + "%")
                 .getResultList();
+        TransactionManager.closeTransaction();
 
-        List<UserFile> ans = new ArrayList<>();
-
-        for (int i = 0; i < typeIdList.size(); i++) {
-
-            List<UserFile> l = em.find(FileType.class, (long) typeIdList.get(i)).getUserFiles();
-            for (UserFile f : l) {
-                ans.add(f);
-            }
-        }
-
-        return ans;
+        return typeList;
 
     }
 
