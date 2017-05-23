@@ -31,6 +31,7 @@ public class UserFile implements Serializable {
     @ManyToOne(cascade = CascadeType.PERSIST)
     private FileType type;
 
+
     public UserFile() {
     }
 

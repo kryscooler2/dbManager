@@ -5,6 +5,8 @@
  */
 package com.isep.databasemanager;
 
+import com.isep.databasemanager.dao.FileDAO;
+import com.isep.databasemanager.dao.TransactionManager;
 import com.isep.databasemanager.dao.UserDAO;
 import com.isep.databasemanager.entities.GcfaUser;
 import com.isep.databasemanager.entities.UserFile;
@@ -30,11 +32,24 @@ public class Tester {
 
     public static void main(String[] args) throws IOException, NoSuchAlgorithmException {
 
-        UserDAO userDao = new UserDAO();
-        List<GcfaUser> l = userDao.getUsersByKeyWord("tt");
+//        UserDAO userDao = new UserDAO();
+//        List<GcfaUser> l = userDao.getUsersByKeyWord("Theophile");
+//        
+//        for (GcfaUser u:l) {
+//            System.out.println(u.getFirstName());
+//        }
+
+
+        //System.out.println(userDao.getUserById(8095).getFirstName());
+            
+
+
+
+        FileDAO fDao = new FileDAO();
+        List<UserFile> l = fDao.getFilesByFileType("journal1");
         
-        for (GcfaUser u:l) {
-            System.out.println(u.getFirstName());
+        for (UserFile f : l) {
+            System.out.println(f.getFileName());
         }
 
     }
