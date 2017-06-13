@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.isep.databasemanager;
 
 import com.isep.databasemanager.dao.TransactionManager;
@@ -19,10 +14,6 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
-/**
- *
- * @author Sliveer
- */
 public class DBFiller {
 
     private static EntityManager em;
@@ -33,10 +24,25 @@ public class DBFiller {
         UserType tutor = new UserType("tutor");
         UserType student = new UserType("student");
         
-        FileType journal1 = new FileType("journal1");
-        FileType journal2 = new FileType("journal2");
-        FileType rapportE1 = new FileType("rapportE1");
-        FileType rapportE2 = new FileType("rapportE2");
+        FileType journal1 = new FileType("Journal 1");
+        FileType journal2 = new FileType("Journal 2");
+        FileType journal3 = new FileType("Journal 3");
+        FileType journal4 = new FileType("Journal 4");
+        FileType journal5 = new FileType("Journal 5");
+        FileType journal6 = new FileType("Journal 6");
+        FileType journal7 = new FileType("Journal 7");
+        FileType journal8 = new FileType("Journal 8");
+        FileType rapportE1 = new FileType("Rapport E1");
+        FileType rapportE2 = new FileType("Rapport E2");
+        FileType rapportE3 = new FileType("Rapport E3");
+        FileType rapportE4 = new FileType("Rapport E4");
+        FileType rapportE5 = new FileType("Rapport E5");
+        FileType rapportE6 = new FileType("Rapport E6");
+        FileType rapportE7 = new FileType("Rapport E7");
+        FileType rapportE8 = new FileType("Rapport E8");
+        FileType synthese1 = new FileType("Synthèse 1");
+        FileType synthese2 = new FileType("Synthèse 2");
+        FileType finalreport = new FileType("Rapport final");
         FileType documentation = new FileType("documentation");
         
         UserTime userTime1 = new UserTime();
@@ -83,6 +89,23 @@ public class DBFiller {
         em.persist(userFile5);
         em.persist(userFile6);
         em.persist(userFile7);
+        
+        em.persist(journal3);
+        em.persist(journal4);
+        em.persist(journal5);
+        em.persist(journal6);
+        em.persist(journal7);
+        em.persist(journal8);
+        em.persist(rapportE2);
+        em.persist(rapportE3);
+        em.persist(rapportE4);
+        em.persist(rapportE5);
+        em.persist(rapportE6);
+        em.persist(rapportE7);
+        em.persist(rapportE8);
+        em.persist(synthese1);
+        em.persist(synthese2);
+        em.persist(finalreport);
         
         em.persist(relation1);
         em.persist(relation2);

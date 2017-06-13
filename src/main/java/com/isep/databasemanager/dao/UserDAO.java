@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.isep.databasemanager.dao;
 
 import com.isep.databasemanager.entities.GcfaUser;
@@ -19,15 +15,9 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.ParameterExpression;
 import javax.persistence.criteria.Root;
 
-/**
- *
- * @author Sliveer
- */
 public class UserDAO {
 
     public GcfaUser getUserById(long id) {
-
-        String path = System.getProperty("user.dir");
 
         EntityManager em = TransactionManager.initTransaction();
         GcfaUser user = em.find(GcfaUser.class, id);

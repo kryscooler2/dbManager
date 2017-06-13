@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.isep.databasemanager.entities;
 
 import java.util.List;
@@ -13,10 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-/**
- *
- * @author Sliveer
- */
 @Entity
 public class FileType {
     
@@ -25,7 +17,7 @@ public class FileType {
     private long id;
     private String name;
     
-    @OneToMany(mappedBy = "type", cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "type", cascade = CascadeType.ALL)
     private List<UserFile> userFiles;
 
     public FileType() {

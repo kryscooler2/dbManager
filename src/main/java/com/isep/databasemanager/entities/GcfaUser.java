@@ -31,7 +31,7 @@ public class GcfaUser implements Serializable {
     private UserRelation userRelation;
     @OneToMany(mappedBy = "author", cascade = CascadeType.PERSIST)
     private List<UserFile> userFiles;
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne(cascade = CascadeType.ALL)
     private UserType type;
 
     public GcfaUser() {
