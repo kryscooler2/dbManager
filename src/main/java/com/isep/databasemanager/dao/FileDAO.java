@@ -43,4 +43,13 @@ public class FileDAO {
         
     }
     
+    public void validateFile(UserFile file) {
+        
+        file.setValidated(true);
+        EntityManager em = TransactionManager.initTransaction();
+        em.merge(file);
+        TransactionManager.closeTransaction();
+        
+    }
+    
 }
